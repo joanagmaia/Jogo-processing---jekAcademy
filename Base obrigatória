@@ -21,6 +21,7 @@ void draw () {
   ybola+=velybola;
   moveBola();
   perdePontos();
+  pontosTempo();
 }
 //barras a moverem-se com o teclado e não as deixa sair da janela
 void movePecas () {
@@ -81,3 +82,10 @@ void velocidade () {
   if(direcaoy==0)
     velybola*=-1;
 }
+
+//mostrar pontos
+void pontosTempo () {
+  textSize(80);
+  text(pontosjog1,width/4,100);
+  text(pontosjog2,width-width/4,100);
+  }
