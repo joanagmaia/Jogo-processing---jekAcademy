@@ -5,10 +5,12 @@ PImage jek;
 void setup () {
   size (1000,600);
   velocidade();
+  jek = loadImage("jek.png");
 }
 
 void draw () {
   background(255);
+  image (jek,xbola,ybola);
   segundos = millis()/1000;
   strokeWeight(10);
   line(width/2,0,width/2,height);
@@ -17,7 +19,7 @@ void draw () {
   rect(xjog1,yjog1,10,comp1);
   rect(xjog2,yjog2,10,comp2);
   movePecas();
-  ellipse(xbola,ybola,2*raio,2*raio);
+  //ellipse(xbola,ybola,2*raio,2*raio);
   yjog1+=incjog1;
   yjog2+=incjog2;
   xbola+=velxbola;
@@ -25,6 +27,7 @@ void draw () {
   moveBola();
   pontosTempo();
   perdePontos();
+  extracomp();
   if(gameOver) {
     fill(255);
     rect(0,0,width,height);
@@ -106,4 +109,19 @@ void velocidade () {
     velxbola*=-1;
   if(direcaoy==0)
     velybola*=-1;
+}
+//opcional
+void extracomp () {
+  if(pontosjog1==3) {
+    comp1=120;
+  }
+  if(pontosjog2==3) {
+    comp2=120;
+  }
+  if(pontosjog1==4) {
+    comp1=70;
+  }
+  if(pontosjog2==4) {
+    comp2=70;
+  }
 }
