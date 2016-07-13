@@ -23,6 +23,19 @@ void draw () {
   perdePontos();
   pontosTempo();
 }
+
+//quando marcam ponto e a bola tem que ser reposta
+void velocidade () {
+  velxbola=int(random(4,5));
+  velybola=int(random(4,5));
+  direcaox=int(random(2));
+  direcaoy=int(random(2));
+  if(direcaox==0)
+    velxbola*=-1;
+  if(direcaoy==0)
+    velybola*=-1;
+}
+
 //barras a moverem-se com o teclado e não as deixa sair da janela
 void movePecas () {
   if (keyCode==UP)
@@ -46,6 +59,7 @@ void movePecas () {
   if (yjog2>=height-comp2)
     yjog2=height-comp2;
 }
+
 //bola a bater na parede de cima e de baixo e nas barras
 void moveBola () {
   if(ybola<raio || ybola>height-raio) 
@@ -55,6 +69,7 @@ void moveBola () {
   if(xbola>xjog2-raio && ybola>yjog2 && ybola<yjog2+comp2)
     velxbola*=-1;
 }
+
 //quando se marcam pontos
 void perdePontos () {
   if (xbola<raio) {
@@ -69,18 +84,6 @@ void perdePontos () {
      ybola=int(random(raio,300-raio));
      velocidade();
   }
-}
-
-//quando marcam ponto e a bola tem que ser reposta
-void velocidade () {
-  velxbola=int(random(4,5));
-  velybola=int(random(4,5));
-  direcaox=int(random(2));
-  direcaoy=int(random(2));
-  if(direcaox==0)
-    velxbola*=-1;
-  if(direcaoy==0)
-    velybola*=-1;
 }
 
 //mostrar pontos
