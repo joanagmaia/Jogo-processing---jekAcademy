@@ -1,4 +1,4 @@
-int incjog1 = 0, incjog2 = 0, xjog1 = 0, yjog1 = 0, xjog2 = 990, yjog2 = 0, xbola =500, ybola =300, velxbola, velybola, raio=10, direcaox,direcaoy, pontosjog1 = 0, pontosjog2 = 0;
+int incjog1 = 0, incjog2 = 0, xjog1 = 0, yjog1 = 0, xjog2 = 990, yjog2 = 0, xbola =500, ybola =300, velxbola, velybola, raio=10, direcaox,direcaoy, pontosjog1 = 0, pontosjog2 = 0, comp1=70, comp2=70;
 
 void setup () {
   size (1000,600);
