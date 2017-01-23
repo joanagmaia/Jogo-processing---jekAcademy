@@ -1,16 +1,13 @@
 int incjog1 = 0, incjog2 = 0, xjog1 = 0, yjog1 = 0, xjog2 = 990, yjog2 = 0, xbola =500, ybola =300, velxbola, velybola, raio=10, direcaox,direcaoy, pontosjog1 = 0, pontosjog2 = 0, segundos, tempo,comp1=70,comp2=70;
 boolean gameOver=false;
 int m=1,seg=60, score1,score2;
-PImage jek;
 void setup () {
   size (1000,600);
   velocidade();
-  jek = loadImage("jek.png");
 }
 
 void draw () {
   background(255);
-  image (jek,xbola,ybola);
   segundos = millis()/1000;
   strokeWeight(10);
   line(width/2,0,width/2,height);
@@ -19,7 +16,7 @@ void draw () {
   rect(xjog1,yjog1,10,comp1);
   rect(xjog2,yjog2,10,comp2);
   movePecas();
-  //ellipse(xbola,ybola,2*raio,2*raio);
+  ellipse(xbola,ybola,2*raio,2*raio);
   yjog1+=incjog1;
   yjog2+=incjog2;
   xbola+=velxbola;
